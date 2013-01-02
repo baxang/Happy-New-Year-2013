@@ -6,7 +6,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>2013!</title>
+        <title>Happy 2013</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
         <meta name="apple-mobile-web-app-capable" content="yes">
@@ -15,6 +15,7 @@
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/font-awesome.css">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png" />
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
     </head>
     <body>
@@ -45,7 +46,6 @@
 
     <script>
         var init = function() {
-            cube.style['display'] = 'block';
             var cube = document.getElementById('cube'),
                 figures = document.querySelectorAll('#cube figure'),
                 panelCount = cube.children.length,
@@ -56,14 +56,14 @@
                     theta += ( 360 / panelCount ) * increment * -1;
                     cube.style[ transformProp ] = 'translateZ( -160px ) rotateY(' + theta + 'deg)';
                 };
+            cube.style['display'] = 'block';
             document.body.addEventListener( 'touchend', onNavButtonClick, false);
         };
 
         if ("standalone" in window.navigator) {
-
-          if (window.navigator.standalone) {
-            window.addEventListener( 'DOMContentLoaded', init, false);
-          } else {
+            if (window.navigator.standalone) {
+                window.addEventListener( 'DOMContentLoaded', init, false);
+            } else {
               document.getElementById('onsafari').style['display'] = 'block';
           }
         } else {
